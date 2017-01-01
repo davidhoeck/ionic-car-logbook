@@ -3,22 +3,24 @@ import { Entry } from './entry.model';
 import { Address } from './address.model';
 import { Storage } from '@ionic/storage';
 import { UUID } from 'angular2-uuid';
+import { GoogleDistanceApi } from '../../providers/google-distance-api';
 
 @Injectable()
 export class EntriesService{
 
-    constructor(public storage: Storage){}
+    constructor(
+        public storage: Storage,
+        public googleDistanceApi: GoogleDistanceApi ){}
 
     create(startingAddress: Address, endingAddress: Address){
         
         //Create a unique ID
         var uuid = UUID.UUID();
         
-        //Store the entry
-        //this.storage.set(uuid, entry);
+        this.googleDistanceApi.setOriginAddress(startingAddress);
+        this.googleDistanceApi.setDestinationAddress(endingAddress);
 
-        //Return all unique ids in the storage
-        //return this.storage.keys();
+        this.googleDistanceApi.getDistance();
         return uuid;
     }
 

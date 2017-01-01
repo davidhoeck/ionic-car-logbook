@@ -5,6 +5,7 @@ import { Address } from '../entries/address.model';
 import { EntriesService } from '../entries/entries.service';
 
 
+
 @Component({
   selector: 'page-create-entry',
   templateUrl: 'create-entry.html',
@@ -15,7 +16,12 @@ export class CreateEntryPage {
   public startingAddress: Address;
   public endingAddress: Address;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public entriesService: EntriesService) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public viewCtrl: ViewController, 
+    public entriesService: EntriesService) {
+
     this.startingAddress = new Address();
     this.endingAddress = new Address();
   }
@@ -31,8 +37,7 @@ export class CreateEntryPage {
   createEntry(){
      var uuid = this.entriesService.create(this.startingAddress, this.endingAddress);
 
-     alert(JSON.stringify(uuid));
-
+     console.log(uuid);
   }
 
 }
