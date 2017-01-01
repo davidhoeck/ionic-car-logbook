@@ -6,13 +6,7 @@ export class Address{
     public city: string;
     public country: string;
 
-    constructor(street, houseNumber, zipCode, city, country){
-        this.street = street;
-        this.houseNumber = houseNumber;
-        this.zipCode = zipCode;
-        this.city = city;
-        this.country = country;
-    }
+    constructor(){}
 
     public __toString() : string{
         var addressString = this.street;

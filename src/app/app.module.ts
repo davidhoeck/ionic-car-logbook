@@ -7,6 +7,7 @@ import {ExportPage} from '../pages/export/export';
 import {EntriesPage} from '../pages/entries/entries';
 import {VehiclesPage} from '../pages/vehicles/vehicles';
 import {CreateEntryPage} from '../pages/create-entry/create-entry';
+import { EntriesService } from '../pages/entries/entries.service';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -33,7 +34,8 @@ import { TabsPage } from '../pages/tabs/tabs';
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Storage
+    Storage,
+    EntriesService
     ]
 })
 export class AppModule {}

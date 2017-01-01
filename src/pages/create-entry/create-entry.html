@@ -14,46 +14,90 @@
 
 
 <ion-content padding>
-  <h3>Start Address</h3>
-  <p>Seperate with a ','</p>
-  <ion-list>
+  <small>Seperate inputs with a comma.</small>
+  <h3 class="address-heading">Start Address</h3>
 
-    <ion-item>
-      <ion-label floating>Street and House Number</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-75>
+        <ion-item>
+          <ion-label floating>Street</ion-label>
+          <ion-input type="text" [(ngModel)]="startingAddress.street"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-25>
+        <ion-item>
+          <ion-label floating>No.</ion-label>
+          <ion-input type="number" [(ngModel)]="startingAddress.houseNumber"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-33>
+        <ion-item>
+          <ion-label floating>ZIP</ion-label>
+          <ion-input type="number" [(ngModel)]="startingAddress.zipCode"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-66>
+        <ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" [(ngModel)]="startingAddress.city"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-item>
+          <ion-label floating>Country</ion-label>
+          <ion-input type="text" [(ngModel)]="startingAddress.country"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 
-    <ion-item>
-      <ion-label floating>ZIP Code and City</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+  <h3 class="address-heading">Ending Address</h3>
 
-    <ion-item>
-      <ion-label floating>Country</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-  </ion-list>
+   <ion-grid>
+    <ion-row>
+      <ion-col width-75>
+        <ion-item>
+          <ion-label floating>Street</ion-label>
+          <ion-input type="text" [(ngModel)]="endingAddress.street"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-25>
+        <ion-item>
+          <ion-label floating>No.</ion-label>
+          <ion-input type="number" [(ngModel)]="endingAddress.houseNumber"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-33>
+        <ion-item>
+          <ion-label floating>ZIP</ion-label>
+          <ion-input type="number" [(ngModel)]="endingAddress.zipCode"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-66>
+        <ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" [(ngModel)]="endingAddress.city"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-item>
+          <ion-label floating>Country</ion-label>
+          <ion-input type="text" [(ngModel)]="endingAddress.country"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <hr>
-  <h3>Ending Address</h3>
-  <p>Seperate with a ','</p>
-
-  <ion-list>
-
-    <ion-item>
-      <ion-label floating>Street and House Number</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>ZIP Code and City</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Country</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-  </ion-list>
+  <button ion-button full (click)="createEntry()" >Create Entry</button>
 
 </ion-content>

@@ -9,16 +9,17 @@ export class EntriesService{
 
     constructor(public storage: Storage){}
 
-    create(entry: Entry){
+    create(startingAddress: Address, endingAddress: Address){
         
         //Create a unique ID
         var uuid = UUID.UUID();
         
         //Store the entry
-        this.storage.set(uuid, entry);
+        //this.storage.set(uuid, entry);
 
         //Return all unique ids in the storage
-        return this.storage.keys();
+        //return this.storage.keys();
+        return uuid;
     }
 
     remove(uuid: string){
